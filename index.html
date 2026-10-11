@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cinema Ticket Booking</h1>
+    <p>Name: <input type="text" id="name"></p>
+    <p>Age: <input type="number" id="age"></p>
+    <p>Number of Tickets: <input type="number" id="number"></p>
+    <button onclick="calc()">Calculate Price</button>
+    <button onclick="clr()">Clear</button>
+    <hr>
+    <h1>--<span id="displayName">{Name}</span>'s Ticket--</h1>
+    <p>Price per ticket: $10</p>
+    <p>Number of tickets: <span id="displayNumber">-</span></p>
+    <p>Total: $<span id="total">-</span></p>
+    <hr style="border: 1px solid black;">
+
+    <script>
+            const total = document.getElementById('total')
+            const name = document.getElementById('name').value
+            const age = document.getElementById('age').value
+            const number = document.getElementById('number').value
+            const displayName = document.getElementById('displayName')
+            const displayNumber = document.getElementById('displayNumber')
+
+        function calc(){
+            const name = document.getElementById('name').value
+            const number = document.getElementById('number').value
+
+            displayName.innerHTML = name
+            displayNumber.innerHTML = number
+            total.innerHTML = number * 10
+        }
+
+        function clr(){
+            document.getElementById('age').value = null
+            document.getElementById('name').value = null
+            document.getElementById('number').value = null
+            displayName.innerHTML = '{Name}'
+            displayNumber.innerHTML = '-'
+            total.innerHTML = '-'
+
+            /* Simpler Option :
+            
+            window.location.reload(); */
+        }
+    </script>
+</body>
+</html>
